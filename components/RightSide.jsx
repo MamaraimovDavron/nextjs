@@ -5,6 +5,11 @@ import { CiBellOn } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import img from "../imgs/right imgs/unsplash_NohB3FJSY90.png";
 import Image from "next/image";
+import img1 from "../imgs/right imgs/1.png";
+import img2 from "../imgs/right imgs/2.png";
+import img3 from "../imgs/right imgs/3.png";
+import img4 from "../imgs/right imgs/4.png";
+import img5 from "../imgs/right imgs/5.png";
 
 const data1 = [
   {
@@ -23,6 +28,25 @@ const data1 = [
     top: "500",
     middle: "New Clients Approached",
     footer: "5% Increase from Last Week",
+  },
+];
+
+const imgs = [img1, img2, img3, img4, img5];
+
+const data = [
+  { top: "Ellie joined team developers", footer: "04 April, 2021 | 04:00 PM" },
+  { top: "Jenny joined team HR", footer: "04 April, 2021 | 04:00 PM" },
+  {
+    top: "Adam got employee of the month",
+    footer: "03 April, 2021 | 02:00 PM",
+  },
+  {
+    top: "Adam got employee of the month",
+    footer: "02 April, 2021 | 02:00 PM",
+  },
+  {
+    top: "Jack joined team design",
+    footer: "01 April, 2021 | 03:00 PM",
   },
 ];
 
@@ -52,13 +76,17 @@ export const RightSide = () => {
           <h3>Notifications</h3>
           <p>View All</p>
         </div>
-        <div className="box">
-          <Image />
-          <span>
-            <h4>Ellie joined team developers</h4>
-            <h5>04 April, 2021 | 04:00 PM</h5>
-          </span>
-        </div>
+        {data.map((item, index) => {
+          return (
+            <div className="box" key={index}>
+              <Image src={imgs[index]} />
+              <span>
+                <h4>{item.top}</h4>
+                <h5>{item.footer}</h5>
+              </span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

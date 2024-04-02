@@ -14,6 +14,7 @@ export const Header = () => {
         <h2>Good Morning Anima</h2>
         <p>Hope you have a good day</p>
       </div>
+
       <div className="middle">
         {/* <Image src={img3} /> */}
         <div className="imgBox">
