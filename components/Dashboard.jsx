@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./style.css";
 import img1 from "../imgs/setting.png";
@@ -10,6 +11,7 @@ import img7 from "../imgs/folder 1.png";
 import img8 from "../imgs/settings (1) 1.png";
 import img9 from "../imgs/Illustration.png";
 import Image from "next/image";
+import { useState } from "react";
 
 const data = [
   "Dashboard",
@@ -24,11 +26,18 @@ const data = [
 const imgs = [img2, img3, img4, img5, img6, img7, img8];
 
 export const Dashboard = () => {
+  const [state, setState] = useState(true);
+
   return (
-    <div className="dashboard">
+    <div
+      className={`${state ? "dashboard" : "hide"}`}
+      onClick={() => {
+        setState(!state);
+      }}
+    >
       <div className="teamify">
-        <Image src={img1} />
-        <p>Teamify</p>
+        <Image src={img1} className="img1" />
+        <p className="text">Teamify</p>
       </div>
 
       <ul>
@@ -41,7 +50,8 @@ export const Dashboard = () => {
           );
         })}
       </ul>
-      <Image src={img9} />
+
+      <Image src={img9} className="img9" />
     </div>
   );
 };
