@@ -3,13 +3,13 @@ import "./style.css";
 import { CiSearch } from "react-icons/ci";
 import { CiBellOn } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
-import img from "../imgs/right imgs/unsplash_NohB3FJSY90.png";
+import img from "../../imgs/right imgs/unsplash_NohB3FJSY90.png";
 import Image from "next/image";
-import img1 from "../imgs/right imgs/1.png";
-import img2 from "../imgs/right imgs/2.png";
-import img3 from "../imgs/right imgs/3.png";
-import img4 from "../imgs/right imgs/4.png";
-import img5 from "../imgs/right imgs/5.png";
+import img1 from "../../imgs/right imgs/1.png";
+import img2 from "../../imgs/right imgs/2.png";
+import img3 from "../../imgs/right imgs/3.png";
+import img4 from "../../imgs/right imgs/4.png";
+import img5 from "../../imgs/right imgs/5.png";
 
 const data1 = [
   {

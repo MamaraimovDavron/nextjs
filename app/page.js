@@ -1,8 +1,8 @@
 "use client";
-import { Header } from "@/components/Header";
-import "../components/style.css";
-import { Dashboard } from "../components/Dashboard.jsx";
-import { RightSide } from "@/components/RightSide";
+import { Header } from "@/app/components/Header";
+import "./components/style.css";
+import { Dashboard } from "./components/Dashboard.jsx";
+import { RightSide } from "@/app/components/RightSide";
 
 export default function Home() {
   return (
