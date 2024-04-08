@@ -6,10 +6,10 @@ import { RightSide } from "@/app/components/RightSide";
 
 export default function Home() {
   return (
-    <div className="container">
-      <Dashboard />
+    <div>
+      {/* <Dashboard />
       <Header />
-      <RightSide />
+      <RightSide /> */}
     </div>
   );
 }

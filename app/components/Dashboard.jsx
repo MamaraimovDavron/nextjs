@@ -15,9 +15,15 @@ import { IoSettings } from "react-icons/io5";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
+import { Header } from "./Header";
+import { usePathname } from "next/navigation";
 
 const Data = [
-  { icon: <MdDashboard className="icon" />, text: "Dashboard", path: "/" },
+  {
+    icon: <MdDashboard className="icon" />,
+    text: "Dashboard",
+    path: "/dashboard",
+  },
   {
     icon: <BsMicrosoftTeams className="icon" />,
     text: "Teams",
@@ -68,9 +74,15 @@ export const Dashboard = () => {
 
       <ul>
         {Data.map((item, index) => {
+          const pathname = usePathname();
+          const isActive = pathname.startsWith(item.path);
           return (
-            <li key={index} className={index == 0 ? "myActive" : ""}>
-              <Link href={item.path} className="link">
+            <li key={index}>
+              <Link
+                href={item.path}
+                className="link"
+                id={isActive ? "active" : ""}
+              >
                 {item.icon}
                 <p>{item.text}</p>
               </Link>
