@@ -17,32 +17,9 @@ import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 import { Header } from "./Header";
 import { usePathname } from "next/navigation";
+import data from "../../data/dashboard";
 
-const Data = [
-  {
-    icon: <MdDashboard className="icon" />,
-    text: "Dashboard",
-    path: "/dashboard",
-  },
-  {
-    icon: <BsMicrosoftTeams className="icon" />,
-    text: "Teams",
-    path: "/teams",
-  },
-  { icon: <TbUsers className="icon" />, text: "Employees", path: "/employees" },
-  {
-    icon: <PiProjectorScreenFill className="icon" />,
-    text: "Projects",
-    path: "/projects",
-  },
-  { icon: <FaPhone className="icon" />, text: "Meetings", path: "/meetings" },
-  { icon: <FaFolder className="icon" />, text: "Tasks", path: "/tasks" },
-  {
-    icon: <IoSettings className="icon" />,
-    text: "Settings",
-    path: "/settings",
-  },
-];
+const Data = data;
 
 export const Dashboard = () => {
   const [state, setState] = useState(true);
