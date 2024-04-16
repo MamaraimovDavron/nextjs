@@ -1,15 +1,31 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import "./style.css";
 import img1 from "../../imgs/header-img/Employees.png";
-import img2 from "../../imgs/header-img/Project.png";
-import img3 from "../../imgs/header-img/Team Strength.png";
 import { BarChart } from "./BarChart";
 import { LineChart } from "./LineChart";
-// import img4 from "../../imgs/header-img/Group 1000000805.png";
-// import img5 from "../../imgs/header-img/Graph.png";
+import { useState, useEffect } from "react";
+import { getBarChartData } from "@/axios";
+
+const barChart = [
+  { label: "Marketing", data: 1, className: "first" },
+  { label: "HR", data: 5, className: "second" },
+  { label: "Developers", data: 3, className: "third" },
+  { label: "Design", data: 10, className: "fourth" },
+];
 
 export const Header = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const res = getBarChartData().then((res) => {
+      console.log(res);
+      setData(res);
+    });
+  }, []);
+
   return (
     <div className="header">
       <div className="top">
@@ -18,39 +34,19 @@ export const Header = () => {
       </div>
 
       <div className="middle">
-        {/* <Image src={img3} /> */}
         <div className="barChartBox">
-          <p>Teams Strength</p>
+          <p>Teams Strength </p>
           <BarChart />
-          <div className="titleBox">
-            <div className="top">
-              <div className="box">
-                <div className="square-1">
-                  a
+
+          <div className="infoBox">
+            {barChart.map((item, index) => {
+              return (
+                <div className="box" key={index}>
+                  <div className={`square ${item.className}`}>{item.data}</div>
+                  <p>{item.label}</p>
                 </div>
-                <p>Marketing</p>
-              </div>
-              <div className="box">
-                <div className="square-2">
-                  b
-                </div>
-                <p>HR</p>
-              </div>
-            </div>
-            <div className="bottom">
-            <div className="box">
-                <div className="square-3">
-                  c
-                </div>
-                <p>Developers</p>
-              </div>
-              <div className="box">
-                <div className="square-4">
-                  d
-                </div>
-                <p>Design</p>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
 
@@ -58,7 +54,6 @@ export const Header = () => {
       </div>
 
       <div className="LineBox">
-        {/* <Image src={img2} /> */}
         <LineChart />
       </div>
     </div>

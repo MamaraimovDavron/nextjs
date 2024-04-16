@@ -201,93 +201,72 @@
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid #e6e8ec;
-  /* width: %; */
   height: 344px;
   border-radius: 10px;
   padding: 25px;
   gap: 10px;
 }
 
-
-.header .middle .barChartBox .titleBox{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.header .middle .barChartBox .titleBox .top{
+.header .middle .barChartBox .infoBox {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-around;
-  gap: 10px;
+  gap: 20px;
+  /* height: 100px; */
 }
 
-.header .middle .barChartBox .titleBox .top .box{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 50%;
-}
-.header .middle .barChartBox .titleBox .top .box .square-1{
-  background-color: #FABE7A;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border-radius: 5px;
-}
-
-.header .middle .barChartBox .titleBox .top .box .square-2{
-  background-color: #F6866A;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border-radius: 5px;
-}
-
-.header .middle .barChartBox .titleBox .bottom .box .square-3{
-  background-color: #59E6F6;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border-radius: 5px;
-}
-
-.header .middle .barChartBox .titleBox .bottom .box .square-4{
-  background-color: #7661E2;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border-radius: 5px;
-}
-
-.header .middle .barChartBox .titleBox .bottom{
+.header .middle .barChartBox .infoBox .box {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-  gap: 10px;
-}
-
-.header .middle .barChartBox .titleBox .bottom .box{
-  display: flex;
   align-items: center;
   gap: 10px;
-  width: 50%;
+  /* width: 100px; */
 }
+
+.header .middle .barChartBox .infoBox .box p {
+  font-size: 12px;
+}
+
+.header .middle .barChartBox .infoBox .box .first {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  background-color: #fabe7a;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .middle .barChartBox .infoBox .box .second {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  background-color: #f6866a;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .middle .barChartBox .infoBox .box .third {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  background-color: #59e6f6;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .middle .barChartBox .infoBox .box .fourth {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  background-color: #7661e2;
+  align-items: center;
+  justify-content: center;
+}
+
 .header .middle .barChartBox p {
   font-size: 18px;
   line-height: 40px;
@@ -314,9 +293,7 @@
   padding: 30px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* background-color: red; */
+
   gap: 20px;
 }
 
@@ -578,13 +555,12 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-
-.barChart{
+.barChart {
   width: 100%;
   height: 100%;
 }
 
-.LineBox{
+.LineBox {
   border: 1px solid #e5f7ff;
   width: 100%;
   height: 100%;
@@ -592,7 +568,7 @@
   border-radius: 12px;
 }
 
-.lineChart{
+.lineChart {
   width: 100%;
   height: 100%;
 }
