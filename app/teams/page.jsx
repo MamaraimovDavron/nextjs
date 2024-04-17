@@ -1,8 +1,18 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Data from "./teams";
 import "../components/style.css";
 import Link from "next/link";
+import { getTeamsData } from "@/axios";
+
+// const [data, setData] = useState([]);
+
+// useEffect(() => {
+//   const res = getTeamsData().then((res) => {
+//     console.log(res);
+//     setData(res);
+//   });
+// }, []);
 
 const Teams = () => {
   return (

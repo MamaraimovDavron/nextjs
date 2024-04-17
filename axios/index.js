@@ -22,4 +22,24 @@ const getBarChartData = async () => {
   }
 };
 
-export { getLineChartData, getBarChartData };
+const getTeamsData = async () => {
+  try {
+    const res = await axios.get("http://localhost:3000/api/teams");
+    return res.data;
+  } catch (error) {
+    console.log(error);
+    return { status: error };
+  }
+};
+
+const getBackStreetBoys = async () => {
+  try {
+    const res = await axios.get("http://localhost:3000/api/backstreetboys");
+    return res.data;
+  } catch (error) {
+    console.log(error);
+    return { status: error };
+  }
+};
+
+export { getLineChartData, getBarChartData, getTeamsData, getBackStreetBoys };
