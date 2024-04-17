@@ -48,4 +48,13 @@ const Teams = () => {
   );
 };
 
+export const getStaticProps = async () => {
+  const res = await getTeamsData();
+  console.log(res, "res");
+
+  return {
+    props: { data: res },
+  };
+};
+
 export default Teams;
