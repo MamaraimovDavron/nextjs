@@ -4,7 +4,7 @@ import axios from "axios";
 
 const getLineChartData = async () => {
   try {
-    const res = axios.get("http://localhost:3000/api/lineChart");
+    const res = await axios.get("http://localhost:3001/api/lineChart");
     return res.data;
   } catch (error) {
     console.log(error);
@@ -14,7 +14,7 @@ const getLineChartData = async () => {
 
 const getBarChartData = async () => {
   try {
-    const res = axios.get("http://localhost:3000/api/barChart");
+    const res = await axios.get("http://localhost:3001/api/barChart");
     return res.data;
   } catch (error) {
     console.log(error);

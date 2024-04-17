@@ -8,6 +8,7 @@ import { BarChart } from "./BarChart";
 import { LineChart } from "./LineChart";
 import { useState, useEffect } from "react";
 import { getBarChartData } from "@/axios";
+import axios from "axios";
 
 const barChart = [
   { label: "Marketing", data: 1, className: "first" },
@@ -16,15 +17,17 @@ const barChart = [
   { label: "Design", data: 10, className: "fourth" },
 ];
 
-export const Header = () => {
-  const [data, setData] = useState([]);
+export const Header = ({ data }) => {
+  // const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const res = getBarChartData().then((res) => {
-      console.log(res);
-      setData(res);
-    });
-  }, []);
+  // console.log(props);
+
+  // useEffect(() => {
+  //   const res = getBarChartData().then((res) => {
+  //     console.log(res);
+  //     setData(res);
+  //   });
+  // }, []);
 
   return (
     <div className="header">
@@ -39,7 +42,7 @@ export const Header = () => {
           <BarChart />
 
           <div className="infoBox">
-            {barChart.map((item, index) => {
+            {barChart?.map((item, index) => {
               return (
                 <div className="box" key={index}>
                   <div className={`square ${item.className}`}>{item.data}</div>
@@ -58,4 +61,13 @@ export const Header = () => {
       </div>
     </div>
   );
+};
+
+export const getStaticProps = async () => {
+  const res = await getBarChartData();
+  console.log(res, "res");
+
+  return {
+    props: { data: res },
+  };
 };
